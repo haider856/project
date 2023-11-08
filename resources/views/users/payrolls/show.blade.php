@@ -93,9 +93,9 @@
                                                             {{ $payroll->total_amount }} </span>
                                                     </div>
                                                     <form action="{{ route('payrolls.slip', $payroll) }}" method="get">
-                                                        {{-- <div class="mt-2">
+                                                        <div class="mt-2">
                                                             <input type="submit" value="Print PDF" class="btn btn-success">
-                                                        </div> --}}
+                                                        </div>
                                                     </form>
                                                 </div>
                                             </div>

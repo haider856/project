@@ -23,11 +23,11 @@
                                                 <span class="fw-normal">Payment slip for the month of
                                                     {{ $payroll['months'] }}</span>
                                             </div>
-                                            {{-- <div class="d-flex justify-content text-end">
+                                            <div class="d-flex justify-content text-end">
                                                     <span>Working Department:
                                                         {{ $payroll['employe']['department']['name'] }}
                                                     </span>
-                                            </div> --}}
+                                            </div>
                                             <div class="row">
                                                 <div class="col-md-10">
                                                     <div class="row">
@@ -35,14 +35,14 @@
                                                             <div>
                                                                 <span class="fw-bolder">EMP CNIC</span>
                                                                 <small class="ms-3"></small>
-                                                                {{-- {{ $payroll['employe']['cnic'] }} --}}
+                                                                {{ $payroll['employe']['cnic'] }}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div>
                                                                 <span class="fw-bolder">EMP Name</span>
                                                                 <small class="ms-3"></small>
-                                                                {{-- {{ $payroll ['employe']['user']['name'] }} --}}
+                                                                {{ $payroll ['employe']['user']['name'] }}
                                                             </div>
                                                         </div>
                                                     </div>

@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="card-body">
                             @include('partials.alerts')
-                            <form action="{{ route('department.edit', $department) }}" method="post">
+                            <form action="{{ route('department.update', $department) }}" method="post">
                                 @csrf
                                 @method('PATCH')
                                 <div class="col-md-4">

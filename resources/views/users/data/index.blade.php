@@ -56,13 +56,6 @@
 
                                             <li class="list-group-item mr-3">
                                                 <div class="row">
-                                                    <div class="col-md-3"><strong>Salary:</strong></div>
-                                                    <div class="col-md-9">{{ $employe->salary }}</div>
-                                                </div>
-                                            </li>
-
-                                            <li class="list-group-item mr-3">
-                                                <div class="row">
                                                     <div class="col-md-3"><strong>Cnic:</strong></div>
                                                     <div class="col-md-9">{{ $employe->cnic }}</div>
                                                 </div>
@@ -112,14 +105,6 @@
                                                             No:</strong></div>
                                                     <div class="col-md-9">{{ $employe->contact }}</div>
                                                 </div>
-                                            </li>
-                                            <li class="list-group-item mr-3">
-                                                <div class="row">
-                                                    <div class="col-md-3"><strong>whatsapp
-                                                            No:</strong></div>
-                                                    <div class="col-md-9">{{ $employe->whatsapp }}</div>
-                                                </div>
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>

@@ -43,8 +43,8 @@ Route::middleware(Authenticate::class)->group(function () {
             Route::get('departments/index', 'index')->name('departments');
             Route::get('department/create', 'create')->name('department.create');
             Route::post('department/create', 'store');
-            Route::get('departments/{department}edit', 'edit')->name('department.edit');
-            Route::patch('department/{department}edit', 'update');
+            Route::get('department/{department}edit', 'edit')->name('department.edit');
+            Route::patch('department/{department}/update', 'update')->name('department.update');
             Route::delete('department/{department}/destroy', 'destroy')->name('department.destroy');
         });
 
@@ -91,7 +91,7 @@ Route::middleware(Authenticate::class)->group(function () {
             Route::get('payrolls/index', 'index')->name('payrolls.index');
             Route::post('payrolls/index', 'filter');
             Route::get('payrolls/show', 'show')->name('payrolls.show');
-            Route::get('payrolls/{payrolls}/generate', 'generatPDF')->name('payrolls.slip');
+            Route::get('payrolls/{payroll}/generate', 'generatPDF')->name('payrolls.slip');
         });
         Route::controller(UserProfileController::class)->group(function () {
             Route::get('user/profile/edit', 'edit')->name('profile.edit');

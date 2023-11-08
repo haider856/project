@@ -21,11 +21,13 @@ class PayrollController extends Controller
     {
         return view('payroll.index', [
             'employes' => Employe::all(),
+
         ]);
     }
 
     public function filter(Request $request)
     {
+        $payrolls = Payroll::all();
         if (!empty($request->months) && !empty($request->employe_id)) {
             $payrolls = Payroll::where([
                 ['months', '=', $request->months],
@@ -44,6 +46,8 @@ class PayrollController extends Controller
         return view('payroll.index', [
             'employes' => Employe::all(),
             'payrolls' => $payrolls,
+            'month' => $request->months,
+
         ]);
     }
 
@@ -155,7 +159,7 @@ class PayrollController extends Controller
 
         $pdf = PDF::loadView('mypdf', ['payroll' => $data]);
 
-        return $pdf->download('itsolutionstuff.pdf');
+        return $pdf->download('payroll.pdf');
     }
 
 

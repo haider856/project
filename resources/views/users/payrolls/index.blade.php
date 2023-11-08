@@ -18,16 +18,42 @@
                             <form action="{{ route('payrolls.index') }}" method="post">
                                 @csrf
                                 <div class="row mb-3">
+
                                     <div class="col-6">
                                         <label for="months" class="form-label">Select Month:</label>
                                         <select name="months" class="form-select @error('months') is-invalid @enderror">
-                                            @for ($monthName = 1; $monthName <= 12; $monthName++)
-                                                <option value="{{ date('F', strtotime("2023-$monthName-01")) }}">
-                                                    {{ date('F', strtotime("2023-$monthName-01")) }}
-                                                </option>
+                                            <option value="" selected>Select a Month</option>
+                                            @for ($monthNumber = 1; $monthNumber <= 12; $monthNumber++)
+                                                @if (isset($month))
+                                                    @php
+                                                        $monthValue = date('F', strtotime("2023-$monthNumber-01"));
+                                                    @endphp
+                                                    <option value="{{ $monthValue }}"
+                                                        {{ $month == $monthValue ? 'selected' : '' }}>
+                                                        {{ $monthValue }}
+                                                    </option>
+                                                @else
+                                                    @php
+                                                        $monthValue = date('F', strtotime("2023-$monthNumber-01"));
+                                                    @endphp
+                                                    <option value="{{ $monthValue }}"
+                                                        {{ old('months') == $monthValue ? 'selected' : '' }}>
+                                                        {{ $monthValue }}
+                                                    </option>
+                                                @endif
                                             @endfor
                                         </select>
                                     </div>
+
+                                    <!-- resources/views/your-view.blade.php -->
+
+                                    {{-- <select name="year" id="year" class="form-control">
+                                        @foreach ($years as $year)
+                                            <option value="{{ $year }}">{{ $year }}</option>
+                                        @endforeach
+                                    </select> --}}
+
+
 
                                     <div class="mt-2">
                                         <input type="submit" value="Submit" class="btn btn-primary">

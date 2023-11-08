@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('users.layouts.main')
 @section('title', 'Profile')
 @section('content')
     <main class="content">

@@ -46,15 +46,21 @@
                                         </div>
 
                                         <div class="col-4">
-                                            <label for="months" class="form-label">
-                                                Month
-                                            </label>
-                                            <select name="months"
-                                                class="form-select @error('months') is-invalid @enderror">
-                                                @for ($monthName = 1; $monthName <= 12; $monthName++)
-                                                    <option value="{{ date('F', strtotime("2023-$monthName-01")) }}">
-                                                        {{ date('F', strtotime("2023-$monthName-01")) }}
+                                            <label for="months" class="form-label">Select Month:</label>
+                                            <select name="months" class="form-select @error('months') is-invalid @enderror">
+                                                <option value="">Select a Month</option>
+                                                @for ($monthNumber = 1; $monthNumber <= 12; $monthNumber++)
+                                                    @php
+                                                        $monthValue = date('F', strtotime("2023-$monthNumber-01"));
+                                                    @endphp
+                                                    @if (old('months') == $monthValue)
+                                                    <option value="{{ $monthValue }}" selected >
+                                                        {{ $monthValue }}
                                                     </option>
+                                                    @else
+                                                    <option value="{{ $monthValue }}"> {{ $monthValue }}
+                                                    </option>
+                                                    @endif
                                                 @endfor
                                             </select>
                                         </div>

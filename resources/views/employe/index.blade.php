@@ -41,7 +41,7 @@
                                                 <td>{{ $employe->cnic }}</td>
                                                 <td>{{ $employe->department->name }}</td>
                                                 <td>{{ $employe->contact }}</td>
-\                                                <td>
+                                                <td>
                                                     <a href="{{ route('employe.show', $employe) }}"
                                                         class="btn btn-primary">Show</a>
                                                     <a href="{{ route('employe.edit', $employe) }}"
